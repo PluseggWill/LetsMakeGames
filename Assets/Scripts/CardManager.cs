@@ -206,7 +206,7 @@ public class CardManager : MonoBehaviour
         //Debug.Log("first");
         //if(Player.instance == null)
         {
-            currentPlayer = GameManager.instance.players[0];
+            //currentPlayer = GameManager.instance.players[0];
         }
         //else
        // {
