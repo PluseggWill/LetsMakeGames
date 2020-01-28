@@ -722,7 +722,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropType: 0
   currentPlayer: {fileID: 0}
-  isBuy: 0
 --- !u!1 &528848038
 GameObject:
   m_ObjectHideFlags: 0
@@ -1227,7 +1226,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropType: 1
   currentPlayer: {fileID: 0}
-  isBuy: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1301,7 +1299,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 4.9634e-41, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1510,6 +1508,7 @@ MonoBehaviour:
   facultyPool: {fileID: 1820204852}
   marketPool: {fileID: 1557363942}
   currentGamePool: {fileID: 700117607}
+  currentPlayer: {fileID: 0}
 --- !u!4 &1083134509
 Transform:
   m_ObjectHideFlags: 0
@@ -2359,6 +2358,11 @@ MonoBehaviour:
   art: 0
   money: 0
   reputation: 0
+  techNum: {fileID: 0}
+  designNum: {fileID: 0}
+  artNum: {fileID: 0}
+  moneyNum: {fileID: 0}
+  reputationNum: {fileID: 0}
   isBuy: 0
 --- !u!1 &1811938697
 GameObject:
@@ -2536,6 +2540,52 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!1 &1926683341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1926683343}
+  - component: {fileID: 1926683342}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1926683342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926683341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623a6654af7977f499dc68b546576663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players: []
+  nextRound: {fileID: 0}
+  restart: {fileID: 0}
+--- !u!4 &1926683343
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926683341}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 668.66724, y: 301.15234, z: -1722.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1951314495
 GameObject:
   m_ObjectHideFlags: 0
@@ -2630,6 +2680,11 @@ MonoBehaviour:
   art: 0
   money: 0
   reputation: 0
+  techNum: {fileID: 0}
+  designNum: {fileID: 0}
+  artNum: {fileID: 0}
+  moneyNum: {fileID: 0}
+  reputationNum: {fileID: 0}
   isBuy: 0
 --- !u!1 &1969096819
 GameObject:
@@ -2935,9 +2990,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fc17742d84db594ca6061a6e42eb2a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tech: 0
-  design: 0
-  art: 0
-  money: 0
-  reputation: 0
+  tech: 5
+  design: 5
+  art: 5
+  money: 5
+  reputation: 5
+  techNum: {fileID: 0}
+  designNum: {fileID: 0}
+  artNum: {fileID: 0}
+  moneyNum: {fileID: 0}
+  reputationNum: {fileID: 0}
   isBuy: 0

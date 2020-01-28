@@ -7,6 +7,7 @@ public class CardManager : MonoBehaviour
     public GameObject facultyPool;
     public GameObject marketPool;
     public GameObject currentGamePool;
+    public Player currentPlayer;
     private Dictionary<int, CardData>[] deckData;
     private List<int> facultyKey;
     private List<int> gameKey;

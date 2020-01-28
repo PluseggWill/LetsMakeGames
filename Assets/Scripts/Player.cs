@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
         tech = 10;
         design = 0;
         art = 0;
-
+        
     }
 
     // Update is called once per frame
