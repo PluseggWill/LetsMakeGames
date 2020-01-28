@@ -19,7 +19,7 @@ public class CardManager : MonoBehaviour
     {
         
         LoadDeck();
-        //ChangePlayer(GameManager.instance.currentPlayer); ;
+        ChangePlayer(GameManager.instance.currentPlayer); ;
         ShuffleFacultyCard(deckData[0].Count);
         ShuffleGameCard(deckData[1].Count);
         for (int i = 0;i<5;i++)

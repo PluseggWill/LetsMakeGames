@@ -11,6 +11,7 @@ public class Drop : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerE
     private void FixedStart() {
 
         currentPlayer = GameManager.instance.players[GameManager.instance.currentPlayer];
+        Debug.Log("666"+"GameManager.instance.currentPlayer");
 
     }
     public void OnPointerEnter(PointerEventData eventData)
