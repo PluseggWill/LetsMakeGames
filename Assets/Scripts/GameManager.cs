@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
     public GameObject myFaculty;
     public GameObject myGames;
     public GameObject WinPanel;
-    
+
+    public Text currentPlayerText;
     public Button nextRound;
     public Button restart;
     public int currentPlayer = 1;
@@ -28,10 +29,10 @@ public class GameManager : MonoBehaviour
 
 
         nextRound.onClick.AddListener(nextPlayer);
-
+        currentPlayerText.text = "Current Player: " + currentPlayer.ToString();
         //Player player1 = new Player();
         //players.Add(Player1.instance);
-        
+
         /*players.Add(Player2.instance);
         players.Add(Player3.instance);
         players.Add(Player4.instance);*/
@@ -39,7 +40,8 @@ public class GameManager : MonoBehaviour
 
     void nextPlayer()
     {
-        if(currentPlayer == 4)
+        currentPlayerText.text = "Current Player: " + currentPlayer.ToString();
+        if (currentPlayer == 4)
         {
             currentPlayer = 1;
         }
