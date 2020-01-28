@@ -45,7 +45,7 @@ public class CardManager : MonoBehaviour
         for (int i = 0;i<4;i++)
         {
             DrawCard(CardType.Game);
-            
+            GameManager.instance.nextPlayer();
             ChangePlayer(GameManager.instance.currentPlayer);
         }
         GameManager.instance.nextPlayer();
