@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CardManager : MonoBehaviour
 {
+    public static CardManager instance;
+
     public GameObject facultyPool;
     public GameObject marketPool;
     public GameObject gamePool;
@@ -15,6 +17,16 @@ public class CardManager : MonoBehaviour
     private List<int> gameKey;
     private Dictionary<int, CardData> gameCardData;
     private Dictionary<int, CardData> marketCardData;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+            Destroy(transform.gameObject);
+    }
 
     void Start()
     {
@@ -223,7 +235,7 @@ public class CardManager : MonoBehaviour
         currentPlayer = GameManager.instance.players[playerNum-1];
     }
 
-    private void ClearCards()
+    public void ClearCards()
     {
         foreach(Transform child in playerFacultyPool.transform){
             GameObject.Destroy(child.gameObject);

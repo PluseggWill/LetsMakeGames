@@ -46,15 +46,27 @@ public class GameManager : MonoBehaviour
             currentPlayer = 1;
         }
         else currentPlayer++;
-        //loadMycards();
+        loadMycards();
 
     }
 
-    /*void loadMycards()
+    void loadMycards()
     {
-        TODO
-    }*/
-    
+        CardManager.instance.ClearCards();
+        foreach(var i in players[currentPlayer - 1].games)
+        {
+            CardManager.instance.CreateCard(i, CardPosition.DevGame);
+        }
+        foreach (var i in players[currentPlayer - 1].faculty)
+        {
+            CardManager.instance.CreateCard(i, CardPosition.PlayerFaculty);
+        }
+        foreach (var i in players[currentPlayer - 1].cards)
+        {
+            CardManager.instance.CreateCard(i, CardPosition.Hand);
+        }
+    }
+
     void win()
     {
        
