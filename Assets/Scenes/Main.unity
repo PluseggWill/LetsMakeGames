@@ -1411,6 +1411,7 @@ GameObject:
   - component: {fileID: 968206582}
   - component: {fileID: 968206584}
   - component: {fileID: 968206583}
+  - component: {fileID: 968206585}
   m_Layer: 5
   m_Name: Player3
   m_TagString: Untagged
@@ -1476,6 +1477,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 968206581}
   m_CullTransparentMesh: 0
+--- !u!114 &968206585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968206581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ec64c4e6a0a732479d7bd060d5a7630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tech: 0
+  design: 0
+  art: 0
+  money: 0
+  reputation: 0
+  techNum: {fileID: 1331054852}
+  designNum: {fileID: 1969096821}
+  artNum: {fileID: 1406186467}
+  moneyNum: {fileID: 0}
+  reputationNum: {fileID: 0}
+  isBuy: 0
 --- !u!1 &1083134507
 GameObject:
   m_ObjectHideFlags: 0
@@ -1486,6 +1510,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1083134509}
   - component: {fileID: 1083134508}
+  - component: {fileID: 1083134510}
   m_Layer: 0
   m_Name: CardManager
   m_TagString: Untagged
@@ -1524,6 +1549,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1083134510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083134507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc17742d84db594ca6061a6e42eb2a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tech: 0
+  design: 0
+  art: 0
+  money: 0
+  reputation: 0
+  techNum: {fileID: 0}
+  designNum: {fileID: 0}
+  artNum: {fileID: 0}
+  moneyNum: {fileID: 0}
+  reputationNum: {fileID: 0}
+  isBuy: 0
 --- !u!1 &1301739628
 GameObject:
   m_ObjectHideFlags: 0
@@ -2351,7 +2399,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1760054268}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fc17742d84db594ca6061a6e42eb2a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 27052d8c2af29704b94dd45f19b2bc17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tech: 0
@@ -2359,9 +2407,9 @@ MonoBehaviour:
   art: 0
   money: 0
   reputation: 0
-  techNum: {fileID: 0}
-  designNum: {fileID: 0}
-  artNum: {fileID: 0}
+  techNum: {fileID: 217181715}
+  designNum: {fileID: 1301739630}
+  artNum: {fileID: 1412282877}
   moneyNum: {fileID: 0}
   reputationNum: {fileID: 0}
   isBuy: 0
@@ -2571,9 +2619,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   players: []
-  myCards: {fileID: 0}
-  myFaculty: {fileID: 0}
-  myGames: {fileID: 0}
+  myCards: {fileID: 2068784123}
+  myFaculty: {fileID: 410568230}
+  myGames: {fileID: 700117607}
   nextRound: {fileID: 699525292}
   restart: {fileID: 593497244}
   currentPlayer: 1
@@ -2677,7 +2725,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1951314495}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fc17742d84db594ca6061a6e42eb2a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f512b1446a976a40a1d6454e8394b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tech: 0
@@ -2685,9 +2733,9 @@ MonoBehaviour:
   art: 0
   money: 0
   reputation: 0
-  techNum: {fileID: 0}
-  designNum: {fileID: 0}
-  artNum: {fileID: 0}
+  techNum: {fileID: 357333228}
+  designNum: {fileID: 654684456}
+  artNum: {fileID: 153210954}
   moneyNum: {fileID: 0}
   reputationNum: {fileID: 0}
   isBuy: 0
@@ -2982,7 +3030,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108453193}
-  m_CullTransparentMesh: 0
+  m_CullTransparentMesh: 1
 --- !u!114 &2108453197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2992,17 +3040,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2108453193}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fc17742d84db594ca6061a6e42eb2a3, type: 3}
+  m_Script: {fileID: 11500000, guid: dd0fcc68d82a42f4b9dc3cd99eb0d712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tech: 5
-  design: 5
-  art: 5
-  money: 5
-  reputation: 5
-  techNum: {fileID: 0}
-  designNum: {fileID: 0}
-  artNum: {fileID: 0}
+  tech: 0
+  design: 0
+  art: 1
+  money: 0
+  reputation: 0
+  techNum: {fileID: 118733552}
+  designNum: {fileID: 250117771}
+  artNum: {fileID: 1811938699}
   moneyNum: {fileID: 0}
   reputationNum: {fileID: 0}
   isBuy: 0

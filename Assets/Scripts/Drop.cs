@@ -8,9 +8,9 @@ public class Drop : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerE
     public CardType dropType;
     public Player currentPlayer;
 
-    private void Start() {
+    private void FixedStart() {
 
-        currentPlayer =Player.instance;
+        currentPlayer = GameManager.instance.players[GameManager.instance.currentPlayer];
 
     }
     public void OnPointerEnter(PointerEventData eventData)

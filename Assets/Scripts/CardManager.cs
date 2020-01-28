@@ -15,10 +15,11 @@ public class CardManager : MonoBehaviour
     private Dictionary<int, CardData> gameCardData;
     private Dictionary<int, CardData> marketCardData;
 
-    void Start()
+    void FixedStart()
     {
+        
         LoadDeck();
-        ChangePlayer(Player.instance.currentPlayer);
+        //ChangePlayer(GameManager.instance.currentPlayer); ;
         ShuffleFacultyCard(deckData[0].Count);
         ShuffleGameCard(deckData[1].Count);
         for (int i = 0;i<5;i++)
@@ -34,6 +35,7 @@ public class CardManager : MonoBehaviour
 
     private void LoadDeck()
     {
+        currentPlayer = GameManager.instance.players[0];
         deckData = new Dictionary<int, CardData>[3];
 
         // faculty data
@@ -197,12 +199,20 @@ public class CardManager : MonoBehaviour
         while (gameKey.Count < length);
     }
 
-    public void ChangePlayer(int playerNum)
+    /*public void ChangePlayer(int playerNum)
     {
 
         Debug.Log("first");
-        currentPlayer = Player.instance;
-        Debug.Log("Next");
+        /*if(Player.instance == null)
+        {
+            currentPlayer = GameManager.instance.players[0];
+        }
+        else
+        {
+            currentPlayer = GameManager.instance.players[playerNum-1];
+            Debug.Log("Next");
+        }
 
-    }
+
+    }*/
 }
