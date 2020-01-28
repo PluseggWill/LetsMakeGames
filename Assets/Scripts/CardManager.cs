@@ -42,13 +42,13 @@ public class CardManager : MonoBehaviour
         {
             DrawCard(CardType.Market);
         }
-        for (int i = 0;i<4;i++)
+        for (int i = 0; i < 4; i++)
         {
             DrawCard(CardType.Game);
             GameManager.instance.nextPlayer();
-            ChangePlayer(GameManager.instance.currentPlayer);
+            //ChangePlayer(GameManager.instance.currentPlayer);
         }
-        GameManager.instance.nextPlayer();
+        //GameManager.instance.nextPlayer();
         //GameManager.instance.loadMycards();
         Debug.Log("Start is called!");
     }
@@ -165,7 +165,7 @@ public class CardManager : MonoBehaviour
         }
         else if (type == CardType.Game)
         {
-            CreateCard(tempData, CardPosition.Hand);
+            //CreateCard(tempData, CardPosition.Hand);
             currentPlayer.cards.Add(tempData);
         }
         else{

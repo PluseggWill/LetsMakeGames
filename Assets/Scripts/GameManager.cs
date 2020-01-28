@@ -40,14 +40,17 @@ public class GameManager : MonoBehaviour
 
     public void nextPlayer()
     {
-        currentPlayerText.text = "Current Player: " + currentPlayer.ToString();
+
         if (currentPlayer == 4)
         {
             currentPlayer = 1;
         }
         else currentPlayer++;
-        loadMycards();
 
+        currentPlayerText.text = "Current Player: " + currentPlayer.ToString();
+        CardManager.instance.currentPlayer = players[currentPlayer - 1];
+        loadMycards();
+        
     }
 
     public void loadMycards()
