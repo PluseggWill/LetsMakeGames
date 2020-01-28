@@ -8,7 +8,7 @@ public class Player3 : Player
 {
 
     public static Player3 instance;
-    void Start()
+    void Awake()
     {
         if (instance == null)
         {

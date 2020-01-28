@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public Button restart;
     public int currentPlayer = 1;
 
-    void Start()
+    void Awake()
     {
         if (instance == null)
         {
@@ -28,10 +28,11 @@ public class GameManager : MonoBehaviour
 
 
         nextRound.onClick.AddListener(nextPlayer);
-        
+
         //Player player1 = new Player();
-        /*players.Add(Player1.instance);
-        players.Add(Player2.instance);
+        //players.Add(Player1.instance);
+        
+        /*players.Add(Player2.instance);
         players.Add(Player3.instance);
         players.Add(Player4.instance);*/
     }

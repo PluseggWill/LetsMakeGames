@@ -9,7 +9,7 @@ public class Player1 : Player
 {
     public static Player1 instance;
 
-    void Start()
+    void Awake()
     {
         if (instance == null)
         {

@@ -15,7 +15,7 @@ public class CardManager : MonoBehaviour
     private Dictionary<int, CardData> gameCardData;
     private Dictionary<int, CardData> marketCardData;
 
-    void FixedStart()
+    void Start()
     {
         
         LoadDeck();
@@ -31,6 +31,7 @@ public class CardManager : MonoBehaviour
             DrawCard(CardType.Market);
         }
         DrawCard(CardType.Game);
+        Debug.Log("Start is called!");
     }
 
     private void LoadDeck()

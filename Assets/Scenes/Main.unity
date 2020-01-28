@@ -3087,10 +3087,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 623a6654af7977f499dc68b546576663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  players: []
+  players:
+  - {fileID: 2108453197}
+  - {fileID: 1760054272}
+  - {fileID: 968206585}
+  - {fileID: 1951314499}
   myCards: {fileID: 2068784123}
   myFaculty: {fileID: 410568230}
   myGames: {fileID: 700117607}
+  WinPanel: {fileID: 0}
   nextRound: {fileID: 699525292}
   restart: {fileID: 593497244}
   currentPlayer: 1

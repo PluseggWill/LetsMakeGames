@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Player2 : Player
 {
     public static Player2 instance;
-    void Start()
+    void Awake()
     {
         if (instance == null)
         {

@@ -8,10 +8,15 @@ public class Drop : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerE
     public CardType dropType;
     public Player currentPlayer;
 
-    private void FixedStart() {
+    private void Start() {
 
-        currentPlayer = GameManager.instance.players[GameManager.instance.currentPlayer];
-        Debug.Log("666"+"GameManager.instance.currentPlayer");
+        //if (GameManager.instance.players[0] == null)
+        //{
+
+        //    Debug.Log("xxxx");
+        //}
+        Debug.Log(GameManager.instance);
+        currentPlayer = GameManager.instance.players[0];
 
     }
     public void OnPointerEnter(PointerEventData eventData)
