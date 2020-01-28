@@ -8,6 +8,7 @@ public class CardManager : MonoBehaviour
     public GameObject marketPool;
     public GameObject gamePool;
     public GameObject handPool;
+    public GameObject playerFacultyPool;
     public Player currentPlayer;
     private Dictionary<int, CardData>[] deckData;
     private List<int> facultyKey;
@@ -139,42 +140,58 @@ public class CardManager : MonoBehaviour
 
         deckData[(int)type].TryGetValue(rand, out tempData);
         //Debug.Log(type + " card drawed, card == " + tempData.imageSprite);
-        CreateCard(tempData, type);
+        //CreateCard(tempData, type);
 
         if (type == CardType.Faculty)
         {
+            CreateCard(tempData, CardPosition.Faculty);
             currentPlayer.faculty.Add(tempData);
         }
         else if (type == CardType.Game)
         {
+            CreateCard(tempData, CardPosition.Hand);
             currentPlayer.cards.Add(tempData);
         }
     }
 
-    public void CreateCard(CardData cardData, CardType type)
+    public void CreateCard(CardData cardData, CardPosition cardPosition)
     {
         GameObject cardInstance = (GameObject)Instantiate(Resources.Load("Prefab/Card"));
         Card card = cardInstance.GetComponent<Card>();
 
         // set parent pool
-        if (type == CardType.Faculty){ 
+        if (cardPosition == CardPosition.Faculty){ 
             card.parentCanvas = facultyPool.transform;
             card.cardPosition = CardPosition.Faculty;
+            card.cardType = CardType.Faculty;
         }
-        else if (type == CardType.Game){ 
+        else if (cardPosition == CardPosition.Hand){ 
             card.parentCanvas = handPool.transform;
             card.cardPosition = CardPosition.Hand;
+            card.cardType = CardType.Game;
         }
-        else if (type == CardType.Market){ 
+        else if (cardPosition == CardPosition.Market){ 
             card.parentCanvas = marketPool.transform;
             card.cardPosition = CardPosition.Market;
+            card.cardType = CardType.Market;
+            card.isDraggable = false;
+        }
+        else if (cardPosition == CardPosition.DevGame){
+            card.parentCanvas = gamePool.transform;
+            card.cardPosition = CardPosition.DevGame;
+            card.cardType = CardType.Game;
+            card.isDraggable = false;
+        }
+        else if (cardPosition == CardPosition.PlayerFaculty){
+            card.parentCanvas = playerFacultyPool.transform;
+            card.cardPosition = CardPosition.PlayerFaculty;
+            card.cardType = CardType.Faculty;
             card.isDraggable = false;
         }
 
         card.cardImage.sprite = Resources.Load<Sprite>(cardData.imageSprite);
         //Debug.Log(cardData.imageSprite);
         card.cardData = cardData;
-        card.cardType = type;
     }
 
     private void ShuffleFacultyCard(int length)
@@ -202,18 +219,12 @@ public class CardManager : MonoBehaviour
 
     public void ChangePlayer(int playerNum)
     {
+        //currentPlayer = GameManager.instance.players[0];
+        currentPlayer = GameManager.instance.players[playerNum-1];
+    }
 
-        //Debug.Log("first");
-        //if(Player.instance == null)
-        {
-            currentPlayer = GameManager.instance.players[0];
-        }
-        //else
-       // {
-            currentPlayer = GameManager.instance.players[playerNum-1];
-            Debug.Log("Next");
-        //}
-    
-
+    private void ClearCards()
+    {
+        
     }
 }
