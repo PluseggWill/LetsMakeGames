@@ -9,7 +9,7 @@ public class Drop : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerE
     public Player currentPlayer;
 
     private void Start() {
-        currentPlayer = GameManager.instance.players[GameManager.instance.currentPlayer-1];
+        currentPlayer =Player.instance;
     }
     public void OnPointerEnter(PointerEventData eventData)
     {

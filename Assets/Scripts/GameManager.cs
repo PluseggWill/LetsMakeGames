@@ -15,8 +15,6 @@ public class GameManager : MonoBehaviour
     public Button nextRound;
     public Button restart;
 
-    public int currentPlayer = 1;//player1234
-
     void Start()
     {
         if (instance == null)

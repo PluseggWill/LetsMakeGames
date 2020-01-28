@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     public Text moneyNum;
     public Text reputationNum;
 
+    public int currentPlayer = 1;//Player1234
+
 
     public bool isBuy = false; 
 
@@ -51,4 +53,5 @@ public class Player : MonoBehaviour
         
         // Debug.log(GameManager.Player.Game[0]);
     }
+
 }

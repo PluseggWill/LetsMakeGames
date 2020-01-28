@@ -18,7 +18,7 @@ public class CardManager : MonoBehaviour
     void Start()
     {
         LoadDeck();
-        ChangePlayer(GameManager.instance.currentPlayer);
+        ChangePlayer(Player.instance.currentPlayer);
         ShuffleFacultyCard(deckData[0].Count);
         ShuffleGameCard(deckData[1].Count);
         for (int i = 0;i<5;i++)
@@ -187,7 +187,7 @@ public class CardManager : MonoBehaviour
     private void ChangePlayer(int playerNum)
     {
         Debug.Log("first");
-        currentPlayer = GameManager.instance.players[playerNum];
+        currentPlayer = Player.instance;
         Debug.Log("Next");
     }
 }
