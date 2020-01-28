@@ -13,7 +13,10 @@ public class CardData
     public int money = 0;
     public int reputation = 0;
     public int requiredReputation = 0;
+    public GameType gameType;
+    public bool isDeving;
 }
 
 public enum CardType { Faculty, Game, Market };
 public enum CardPosition { Faculty, Market, PlayerFaculty, PlayerGame};
+public enum GameType {Act, Rpg, Fps, Mobile, Sports};
