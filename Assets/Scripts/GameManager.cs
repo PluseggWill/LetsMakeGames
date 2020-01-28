@@ -46,12 +46,19 @@ public class GameManager : MonoBehaviour
             currentPlayer = 1;
         }
         else currentPlayer++;
+        //loadMycards();
 
     }
 
+    /*void loadMycards()
+    {
+        TODO
+    }*/
+    
     void win()
     {
-       // WinPamel.Setactive(true);
+       
+        // WinPamel.Setactive(true);
     }
 
 
