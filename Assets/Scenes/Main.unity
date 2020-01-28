@@ -1299,7 +1299,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 4.9634e-41, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 7.33e-43, y: 8.942594e-39, z: 7.33e-43, w: 4.3900255e+30}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1507,7 +1507,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   facultyPool: {fileID: 1820204852}
   marketPool: {fileID: 1557363942}
-  currentGamePool: {fileID: 700117607}
+  gamePool: {fileID: 700117607}
+  handPool: {fileID: 2068784123}
   currentPlayer: {fileID: 0}
 --- !u!4 &1083134509
 Transform:
@@ -2570,11 +2571,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   players: []
-  myCards: {fileID: 2068784123}
-  myFaculty: {fileID: 410568230}
-  myGames: {fileID: 700117607}
+  myCards: {fileID: 0}
+  myFaculty: {fileID: 0}
+  myGames: {fileID: 0}
   nextRound: {fileID: 699525292}
   restart: {fileID: 593497244}
+  currentPlayer: 1
 --- !u!4 &1926683343
 Transform:
   m_ObjectHideFlags: 0
@@ -2895,7 +2897,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 4
+  m_ChildAlignment: 7
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1

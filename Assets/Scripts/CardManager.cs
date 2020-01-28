@@ -6,7 +6,8 @@ public class CardManager : MonoBehaviour
 {
     public GameObject facultyPool;
     public GameObject marketPool;
-    public GameObject currentGamePool;
+    public GameObject gamePool;
+    public GameObject handPool;
     public Player currentPlayer;
     private Dictionary<int, CardData>[] deckData;
     private List<int> facultyKey;
@@ -17,6 +18,7 @@ public class CardManager : MonoBehaviour
     void Start()
     {
         LoadDeck();
+        ChangePlayer(GameManager.instance.currentPlayer);
         ShuffleFacultyCard(deckData[0].Count);
         ShuffleGameCard(deckData[1].Count);
         for (int i = 0;i<5;i++)
@@ -27,6 +29,7 @@ public class CardManager : MonoBehaviour
         {
             DrawCard(CardType.Market);
         }
+        DrawCard(CardType.Game);
     }
 
     private void LoadDeck()
@@ -121,6 +124,15 @@ public class CardManager : MonoBehaviour
         deckData[(int)type].TryGetValue(rand, out tempData);
         //Debug.Log(type + " card drawed, card == " + tempData.imageSprite);
         CreateCard(tempData, type);
+
+        if (type == CardType.Faculty)
+        {
+            currentPlayer.faculty.Add(tempData);
+        }
+        else if (type == CardType.Game)
+        {
+            currentPlayer.cards.Add(tempData);
+        }
     }
 
     public void CreateCard(CardData cardData, CardType type)
@@ -134,7 +146,7 @@ public class CardManager : MonoBehaviour
             card.cardPosition = CardPosition.Faculty;
         }
         else if (type == CardType.Game){ 
-            card.parentCanvas = currentGamePool.transform;
+            card.parentCanvas = handPool.transform;
             card.cardPosition = CardPosition.Hand;
         }
         else if (type == CardType.Market){ 
@@ -172,5 +184,10 @@ public class CardManager : MonoBehaviour
         while (gameKey.Count < length);
     }
 
-
+    private void ChangePlayer(int playerNum)
+    {
+        Debug.Log("first");
+        currentPlayer = GameManager.instance.players[playerNum];
+        Debug.Log("Next");
+    }
 }

@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public Button nextRound;
     public Button restart;
 
-    private int currentPlayer = 1;//player1234
+    public int currentPlayer = 1;//player1234
 
     void Start()
     {
@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
             Destroy(transform.gameObject);
 
         nextRound.onClick.AddListener(nextPlayer);
+        Player player1 = new Player();
+        players.Add(player1);
     }
 
     void nextPlayer()
