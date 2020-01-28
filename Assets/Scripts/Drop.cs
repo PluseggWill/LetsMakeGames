@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class Drop : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    public CardType dropType;
     public void OnPointerEnter(PointerEventData eventData)
     {
 

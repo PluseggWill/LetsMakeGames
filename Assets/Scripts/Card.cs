@@ -1,10 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragHandler
+public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragHandler
 {
+    public CardData cardData;
+    public Image cardImage;
+    public CardPosition cardPosition;
+    public CardType cardType;
     public Transform parentCanvas = null;
 
     void Start() {
