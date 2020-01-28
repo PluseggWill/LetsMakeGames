@@ -19,8 +19,8 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
-        //  else
-        // Destory(transform.gameObject);
+          else
+            Destroy(transform.gameObject);
     }
 
 

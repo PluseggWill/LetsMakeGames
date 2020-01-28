@@ -14,7 +14,11 @@ public class Player : MonoBehaviour
     public int money;
     public int reputation;
 
-    public List<Game> games = new List<Game>();
+    public bool isBuy; 
+
+    public List<CardData> games = new List<CardData>();
+    public List<CardData> faculty = new List<CardData>();
+    public List<CardData> cards = new List<CardData>();
     //public List<DevelopingGame> devGame = new List<DevelopingGame>();
 
 
