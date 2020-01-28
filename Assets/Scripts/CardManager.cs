@@ -60,6 +60,11 @@ public class CardManager : MonoBehaviour
             { 18, new CardData { id = 18, imageSprite = "Cards/Faculty/Builder", tech = 0, art = 2, design = 2, cost = 3} },
             { 19, new CardData { id = 19, imageSprite = "Cards/Faculty/Builder", tech = 0, art = 2, design = 2, cost = 3} },
             { 20, new CardData { id = 20, imageSprite = "Cards/Faculty/Builder", tech = 0, art = 2, design = 2, cost = 3} },
+            { 21, new CardData { id = 21, imageSprite = "Cards/Faculty/Junichi", tech = 3, art = 3, design = 0, cost = 4, money = 1, reputation = -1} },
+            { 22, new CardData { id = 22, imageSprite = "Cards/Faculty/Kojima", tech = 0, art = 2, design = 5, cost = 5, requiredReputation = 5, reputation = 1} },
+            { 23, new CardData { id = 23, imageSprite = "Cards/Faculty/Miyamoto", tech = 4, art = 0, design = 4, cost = 5} },
+            { 24, new CardData { id = 24, imageSprite = "Cards/Faculty/Sid", tech = 2, art = 0, design = 5, cost = 5} },
+            { 25, new CardData { id = 25, imageSprite = "Cards/Faculty/Takashi", tech = 0, art = 5, design = 1, cost = 4} },
         };
 
         // game data
@@ -80,6 +85,14 @@ public class CardManager : MonoBehaviour
             { 12, new CardData {id = 12, imageSprite = "Cards/Game/Sports1", tech = 1, art = 2, design = 2, money = 4, reputation = 1, gameType = GameType.Sports} },
             { 13, new CardData {id = 13, imageSprite = "Cards/Game/Sports2", tech = 2, art = 1, design = 2, money = 4, reputation = 1, gameType = GameType.Sports} },
             { 14, new CardData {id = 14, imageSprite = "Cards/Game/Sports3", tech = 2, art = 2, design = 1, money = 4, reputation = 1, gameType = GameType.Sports} },
+            { 15, new CardData {id = 15, imageSprite = "Cards/Game/2K", tech = 4, art = 6, design = 2, money = 9, reputation = 2, gameType = GameType.Sports} },
+            { 16, new CardData {id = 16, imageSprite = "Cards/Game/BF", tech = 4, art = 6, design = 5, money = 8, reputation = 4, gameType = GameType.Fps} },
+            { 17, new CardData {id = 17, imageSprite = "Cards/Game/COD", tech = 6, art = 3, design = 3, money = 8, reputation = 4, gameType = GameType.Fps} },
+            { 18, new CardData {id = 18, imageSprite = "Cards/Game/FF", tech = 5, art = 7, design = 3, money = 8, reputation = 6, gameType = GameType.Rpg} },
+            { 19, new CardData {id = 19, imageSprite = "Cards/Game/FIFA", tech = 4, art = 2, design = 3, money = 6, reputation = 3, gameType = GameType.Sports} },
+            { 20, new CardData {id = 20, imageSprite = "Cards/Game/GOW", tech = 6, art = 6, design = 6, money = 7, reputation = 7, gameType = GameType.Act} },
+            { 21, new CardData {id = 21, imageSprite = "Cards/Game/MH", tech = 6, art = 7, design = 5, money = 9, reputation = 5, gameType = GameType.Act} },
+            { 22, new CardData {id = 22, imageSprite = "Cards/Game/PM", tech = 1, art = 3, design = 5, money = 7, reputation = 2, gameType = GameType.Rpg} },
         };
 
         // market data
@@ -184,10 +197,12 @@ public class CardManager : MonoBehaviour
         while (gameKey.Count < length);
     }
 
-    private void ChangePlayer(int playerNum)
+    public void ChangePlayer(int playerNum)
     {
+
         Debug.Log("first");
         currentPlayer = Player.instance;
         Debug.Log("Next");
+
     }
 }

@@ -9,7 +9,9 @@ public class Drop : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerE
     public Player currentPlayer;
 
     private void Start() {
+
         currentPlayer =Player.instance;
+
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -77,5 +79,10 @@ public class Drop : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerE
         currentPlayer.games.Add(d.cardData);
         int k = currentPlayer.cards.FindIndex(a=>a.id == d.cardData.id);
         currentPlayer.cards.RemoveAt(k);
+    }
+
+    public void ChangePlayer(int playerNum)
+    {
+        currentPlayer = GameManager.instance.players[playerNum-1];
     }
 }
