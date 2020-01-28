@@ -16,7 +16,7 @@ public class Drop : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerE
         //    Debug.Log("xxxx");
         //}
         Debug.Log(GameManager.instance);
-        currentPlayer = GameManager.instance.players[GameManager.instance.currentPlayer];
+        currentPlayer = GameManager.instance.players[GameManager.instance.currentPlayer-1];
 
     }
     public void OnPointerEnter(PointerEventData eventData)
