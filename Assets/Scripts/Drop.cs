@@ -16,7 +16,7 @@ public class Drop : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerE
         //    Debug.Log("xxxx");
         //}
         Debug.Log(GameManager.instance);
-        currentPlayer = GameManager.instance.players[GameManager.instance.currentPlayer-1];
+        
 
     }
     public void OnPointerEnter(PointerEventData eventData)
@@ -32,6 +32,7 @@ public class Drop : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerE
     public void OnDrop(PointerEventData eventData)
     {
         Card d = eventData.pointerDrag.GetComponent<Card>();
+        currentPlayer = GameManager.instance.players[GameManager.instance.currentPlayer-1];
         if (d != null)
         {
             if (d.cardType == dropType 
@@ -66,6 +67,8 @@ public class Drop : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerE
             currentPlayer.money = currentPlayer.money - d.cardData.cost + d.cardData.money;
 
             d.cardPosition = CardPosition.PlayerFaculty;
+            
+            Debug.Log("faculty bought! "+ d.cardData.imageSprite);
             currentPlayer.faculty.Add(d.cardData);
             GameObject cardManager = GameObject.Find("CardManager");
             cardManager.GetComponent<CardManager>().DrawCard(CardType.Faculty);
@@ -87,10 +90,5 @@ public class Drop : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerE
         currentPlayer.games.Add(d.cardData);
         int k = currentPlayer.cards.FindIndex(a=>a.id == d.cardData.id);
         currentPlayer.cards.RemoveAt(k);
-    }
-
-    public void ChangePlayer(int playerNum)
-    {
-        currentPlayer = GameManager.instance.players[playerNum-1];
     }
 }

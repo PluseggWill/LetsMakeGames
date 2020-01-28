@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
         players.Add(Player4.instance);*/
     }
 
-    void nextPlayer()
+    public void nextPlayer()
     {
         currentPlayerText.text = "Current Player: " + currentPlayer.ToString();
         if (currentPlayer == 4)
@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void loadMycards()
+    public void loadMycards()
     {
         CardManager.instance.ClearCards();
         foreach(var i in players[currentPlayer - 1].games)
@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
         }
         foreach (var i in players[currentPlayer - 1].cards)
         {
+            Debug.Log("Hand Card Created: " + i.imageSprite);
             CardManager.instance.CreateCard(i, CardPosition.Hand);
         }
     }

@@ -26,13 +26,12 @@ public class CardManager : MonoBehaviour
         }
         else
             Destroy(transform.gameObject);
+            
     }
 
     void Start()
     {
-        
         LoadDeck();
-        ChangePlayer(GameManager.instance.currentPlayer); ;
         ShuffleFacultyCard(deckData[0].Count);
         ShuffleGameCard(deckData[1].Count);
         for (int i = 0;i<5;i++)
@@ -43,7 +42,14 @@ public class CardManager : MonoBehaviour
         {
             DrawCard(CardType.Market);
         }
-        DrawCard(CardType.Game);
+        for (int i = 0;i<4;i++)
+        {
+            DrawCard(CardType.Game);
+            
+            ChangePlayer(GameManager.instance.currentPlayer);
+        }
+        GameManager.instance.nextPlayer();
+        //GameManager.instance.loadMycards();
         Debug.Log("Start is called!");
     }
 
@@ -151,18 +157,19 @@ public class CardManager : MonoBehaviour
         }
 
         deckData[(int)type].TryGetValue(rand, out tempData);
-        //Debug.Log(type + " card drawed, card == " + tempData.imageSprite);
-        //CreateCard(tempData, type);
+
 
         if (type == CardType.Faculty)
         {
             CreateCard(tempData, CardPosition.Faculty);
-            currentPlayer.faculty.Add(tempData);
         }
         else if (type == CardType.Game)
         {
             CreateCard(tempData, CardPosition.Hand);
             currentPlayer.cards.Add(tempData);
+        }
+        else{
+            CreateCard(tempData,CardPosition.Market);
         }
     }
 
@@ -202,7 +209,7 @@ public class CardManager : MonoBehaviour
         }
 
         card.cardImage.sprite = Resources.Load<Sprite>(cardData.imageSprite);
-        //Debug.Log(cardData.imageSprite);
+        Debug.Log(cardData.imageSprite);
         card.cardData = cardData;
     }
 
@@ -231,7 +238,6 @@ public class CardManager : MonoBehaviour
 
     public void ChangePlayer(int playerNum)
     {
-        //currentPlayer = GameManager.instance.players[0];
         currentPlayer = GameManager.instance.players[playerNum-1];
     }
 
@@ -244,7 +250,9 @@ public class CardManager : MonoBehaviour
             GameObject.Destroy(child.gameObject);
         }
         foreach(Transform child in handPool.transform){
+            Debug.Log("Hand Card Destroyed" + child.gameObject.GetComponent<Card>().cardData.imageSprite);
             GameObject.Destroy(child.gameObject);
         }
+        //Debug.Log("Board Cleared!");
     }
 }

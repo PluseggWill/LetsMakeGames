@@ -19,6 +19,7 @@ public class Player2 : Player
         tech = 1;
         design = 0;
         art = 0;
+        money = 5;
     }
 
     void Update()
@@ -29,7 +30,7 @@ public class Player2 : Player
         artNum.text = this.art.ToString();
         moneyNum.text = "Money:" + this.money.ToString();
         reputationNum.text = "Reputation:" + this.reputation.ToString();
-        Debug.Log(tech);
+        //Debug.Log(tech);
 
         // Debug.log(GameManager.Player.Game[0]);
     }
