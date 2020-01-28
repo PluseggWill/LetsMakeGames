@@ -171,7 +171,7 @@ public class CardManager : MonoBehaviour
         }
 
         card.cardImage.sprite = Resources.Load<Sprite>(cardData.imageSprite);
-        Debug.Log(cardData.imageSprite);
+        //Debug.Log(cardData.imageSprite);
         card.cardData = cardData;
         card.cardType = type;
     }
@@ -183,7 +183,7 @@ public class CardManager : MonoBehaviour
         do{
             k = Random.Range(0,length);
             if (!facultyKey.Contains(k)) { facultyKey.Add(k);}
-            Debug.Log(k);
+            //Debug.Log(k);
         }
         while (facultyKey.Count < length);
     }
@@ -199,20 +199,20 @@ public class CardManager : MonoBehaviour
         while (gameKey.Count < length);
     }
 
-    /*public void ChangePlayer(int playerNum)
+    public void ChangePlayer(int playerNum)
     {
 
-        Debug.Log("first");
-        /*if(Player.instance == null)
+        //Debug.Log("first");
+        //if(Player.instance == null)
         {
             currentPlayer = GameManager.instance.players[0];
         }
-        else
-        {
+        //else
+       // {
             currentPlayer = GameManager.instance.players[playerNum-1];
             Debug.Log("Next");
-        }
+        //}
+    
 
-
-    }*/
+    }
 }
