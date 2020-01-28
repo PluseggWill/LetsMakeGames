@@ -225,6 +225,14 @@ public class CardManager : MonoBehaviour
 
     private void ClearCards()
     {
-        
+        foreach(Transform child in playerFacultyPool.transform){
+            GameObject.Destroy(child.gameObject);
+        }
+        foreach(Transform child in gamePool.transform){
+            GameObject.Destroy(child.gameObject);
+        }
+        foreach(Transform child in handPool.transform){
+            GameObject.Destroy(child.gameObject);
+        }
     }
 }
