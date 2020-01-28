@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public List<Player> players = new List<Player>();
 
+    public GameObject myCards;
+    public GameObject myFaculty;
+    public GameObject myGames;
+    
     public Button nextRound;
     public Button restart;
 
@@ -19,11 +23,21 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
-          else
+        else
             Destroy(transform.gameObject);
+
+        nextRound.onClick.AddListener(nextPlayer);
     }
 
- 
+    void nextPlayer()
+    {
+        
+
+    }
+
+
+
+
 }
 
     //void FixedUpdate

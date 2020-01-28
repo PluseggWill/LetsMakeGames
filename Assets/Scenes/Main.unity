@@ -2570,8 +2570,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   players: []
-  nextRound: {fileID: 0}
-  restart: {fileID: 0}
+  myCards: {fileID: 2068784123}
+  myFaculty: {fileID: 410568230}
+  myGames: {fileID: 700117607}
+  nextRound: {fileID: 699525292}
+  restart: {fileID: 593497244}
 --- !u!4 &1926683343
 Transform:
   m_ObjectHideFlags: 0
