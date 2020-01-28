@@ -21,6 +21,7 @@ public class Player1 : Player
         tech = 0;
         design = 1;
         art = 0;
+        money = 20;
     }
 
     void Update()

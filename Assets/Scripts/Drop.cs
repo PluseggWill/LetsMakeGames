@@ -67,13 +67,15 @@ public class Drop : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerE
 
             d.cardPosition = CardPosition.PlayerFaculty;
             currentPlayer.faculty.Add(d.cardData);
-
+            GameObject cardManager = GameObject.Find("CardManager");
+            cardManager.GetComponent<CardManager>().DrawCard(CardType.Faculty);
         }
 
     }
 
     private void MakeGame(Card d)
     {
+        d.parentCanvas = this.transform;
         currentPlayer.tech -= 1;
         currentPlayer.art -= 1;
         currentPlayer.design -= 1;
