@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragHandler
 {
     public Transform parentCanvas = null;
+    public bool isDraggable;
 
     void Start() {
         this.transform.SetParent(parentCanvas);
@@ -21,7 +22,10 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragHandl
     public void OnDrag(PointerEventData eventData)
     {
         //Debug.Log("onDrag");
-        this.transform.position = eventData.position;
+        if (isDraggable)
+        {
+            this.transform.position = eventData.position;
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)

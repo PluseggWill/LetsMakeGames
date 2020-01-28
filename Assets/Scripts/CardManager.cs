@@ -22,6 +22,10 @@ public class CardManager : MonoBehaviour
         {
             DrawCard(CardType.Faculty);
         }
+        for (int i = 0;i<3;i++)
+        {
+            DrawCard(CardType.Market);
+        }
     }
 
     private void LoadDeck()
@@ -57,7 +61,21 @@ public class CardManager : MonoBehaviour
         // game data
         deckData[1] = new Dictionary<int, CardData>()
         {
-            { 0, new CardData {imageSprite = "Cards/BasicGameCards/ACTGameCard", tech = 1, art = 3, design = 1, money = 4, reputation = 1} }
+            { 0, new CardData {id = 0, imageSprite = "Cards/Game/ACT", tech = 1, art = 3, design = 1, money = 4, reputation = 1, gameType = GameType.Act} },
+            { 1, new CardData {id = 1, imageSprite = "Cards/Game/ACT", tech = 1, art = 3, design = 1, money = 4, reputation = 1, gameType = GameType.Act} },
+            { 2, new CardData {id = 2, imageSprite = "Cards/Game/ACT", tech = 1, art = 3, design = 1, money = 4, reputation = 1, gameType = GameType.Act} },
+            { 3, new CardData {id = 3, imageSprite = "Cards/Game/FPS", tech = 3, art = 1, design = 1, money = 4, reputation = 1, gameType = GameType.Fps} },
+            { 4, new CardData {id = 4, imageSprite = "Cards/Game/FPS", tech = 3, art = 1, design = 1, money = 4, reputation = 1, gameType = GameType.Fps} },
+            { 5, new CardData {id = 5, imageSprite = "Cards/Game/FPS", tech = 3, art = 1, design = 1, money = 4, reputation = 1, gameType = GameType.Fps} },
+            { 6, new CardData {id = 6, imageSprite = "Cards/Game/Mobile", tech = 1, art = 2, design = 1, money = 5, reputation = -1, gameType = GameType.Mobile} },
+            { 7, new CardData {id = 7, imageSprite = "Cards/Game/Mobile", tech = 1, art = 2, design = 1, money = 5, reputation = -1, gameType = GameType.Mobile} },
+            { 8, new CardData {id = 8, imageSprite = "Cards/Game/Mobile", tech = 1, art = 2, design = 1, money = 5, reputation = -1, gameType = GameType.Mobile} },
+            { 9, new CardData {id = 9, imageSprite = "Cards/Game/RPG", tech = 1, art = 1, design = 3, money = 4, reputation = 1, gameType = GameType.Rpg} },
+            { 10, new CardData {id = 10, imageSprite = "Cards/Game/RPG", tech = 1, art = 1, design = 3, money = 4, reputation = 1, gameType = GameType.Rpg} },
+            { 11, new CardData {id = 11, imageSprite = "Cards/Game/RPG", tech = 1, art = 1, design = 3, money = 4, reputation = 1, gameType = GameType.Rpg} },
+            { 12, new CardData {id = 12, imageSprite = "Cards/Game/Sports1", tech = 1, art = 2, design = 2, money = 4, reputation = 1, gameType = GameType.Sports} },
+            { 13, new CardData {id = 13, imageSprite = "Cards/Game/Sports2", tech = 2, art = 1, design = 2, money = 4, reputation = 1, gameType = GameType.Sports} },
+            { 14, new CardData {id = 14, imageSprite = "Cards/Game/Sports3", tech = 2, art = 2, design = 1, money = 4, reputation = 1, gameType = GameType.Sports} },
         };
 
         // market data
@@ -100,7 +118,7 @@ public class CardManager : MonoBehaviour
         }
 
         deckData[(int)type].TryGetValue(rand, out tempData);
-        Debug.Log(type + " card drawed, card == " + tempData.imageSprite);
+        //Debug.Log(type + " card drawed, card == " + tempData.imageSprite);
         CreateCard(tempData, type);
     }
 
@@ -116,14 +134,16 @@ public class CardManager : MonoBehaviour
         }
         else if (type == CardType.Game){ 
             card.parentCanvas = currentGamePool.transform;
-            card.cardPosition = CardPosition.PlayerGame;
+            card.cardPosition = CardPosition.Hand;
         }
         else if (type == CardType.Market){ 
             card.parentCanvas = marketPool.transform;
             card.cardPosition = CardPosition.Market;
+            card.isDraggable = false;
         }
 
         card.cardImage.sprite = Resources.Load<Sprite>(cardData.imageSprite);
+        Debug.Log(cardData.imageSprite);
         card.cardData = cardData;
         card.cardType = type;
     }
@@ -150,4 +170,6 @@ public class CardManager : MonoBehaviour
         }
         while (gameKey.Count < length);
     }
+
+
 }

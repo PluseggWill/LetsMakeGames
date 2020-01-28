@@ -11,6 +11,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragHandl
     public CardPosition cardPosition;
     public CardType cardType;
     public Transform parentCanvas = null;
+    public bool isDraggable = true;
 
     void Start() {
         this.transform.SetParent(parentCanvas);
@@ -26,7 +27,9 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragHandl
     public void OnDrag(PointerEventData eventData)
     {
         //Debug.Log("onDrag");
-        this.transform.position = eventData.position;
+        if (isDraggable){
+            this.transform.position = eventData.position;
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)

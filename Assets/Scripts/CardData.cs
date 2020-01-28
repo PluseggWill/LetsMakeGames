@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,5 +19,5 @@ public class CardData
 }
 
 public enum CardType { Faculty, Game, Market };
-public enum CardPosition { Faculty, Market, PlayerFaculty, PlayerGame};
+public enum CardPosition { Faculty, Market, PlayerFaculty, Hand, DevGame};
 public enum GameType {Act, Rpg, Fps, Mobile, Sports};
