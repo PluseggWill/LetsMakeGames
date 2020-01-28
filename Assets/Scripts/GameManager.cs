@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject myCards;
     public GameObject myFaculty;
     public GameObject myGames;
+    public GameObject WinPanel;
     
     public Button nextRound;
     public Button restart;
@@ -37,8 +38,17 @@ public class GameManager : MonoBehaviour
 
     void nextPlayer()
     {
-        
+        if(currentPlayer == 4)
+        {
+            currentPlayer = 1;
+        }
+        else currentPlayer++;
 
+    }
+
+    void win()
+    {
+       // WinPamel.Setactive(true);
     }
 
 

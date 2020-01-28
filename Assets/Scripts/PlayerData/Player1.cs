@@ -29,6 +29,8 @@ public class Player1 : Player
         techNum.text = this.tech.ToString();
         designNum.text = this.design.ToString();
         artNum.text = this.art.ToString();
+        moneyNum.text = "Money:"+this.money.ToString();
+        reputationNum.text = "Reputation:"+this.reputation.ToString();
         Debug.Log(tech);
 
         // Debug.log(GameManager.Player.Game[0]);
