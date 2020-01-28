@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
             Destroy(transform.gameObject);
     }
 
-
+ 
 }
 
     //void FixedUpdate

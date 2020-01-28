@@ -44,15 +44,20 @@ public class Drop : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerE
 
     private void BuyFaculty(Card d)
     {
-        d.parentCanvas = this.transform;
-        currentPlayer.tech += d.cardData.tech;
-        currentPlayer.art += d.cardData.art;
-        currentPlayer.design += d.cardData.design;
-        currentPlayer.reputation += d.cardData.reputation;
-        currentPlayer.money = currentPlayer.money - d.cardData.cost + d.cardData.money;
         
-        d.cardPosition = CardPosition.PlayerFaculty;
-        currentPlayer.faculty.Add(d.cardData);
+        {
+            d.parentCanvas = this.transform;
+            currentPlayer.tech += d.cardData.tech;
+            currentPlayer.art += d.cardData.art;
+            currentPlayer.design += d.cardData.design;
+            currentPlayer.reputation += d.cardData.reputation;
+            currentPlayer.money = currentPlayer.money - d.cardData.cost + d.cardData.money;
+
+            d.cardPosition = CardPosition.PlayerFaculty;
+            currentPlayer.faculty.Add(d.cardData);
+
+        }
+
     }
 
     private void MakeGame(Card d)
